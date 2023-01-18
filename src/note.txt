@@ -1,0 +1,38 @@
+zip mergeMap debounce throttle subject map
+
+rxjs
+	คือ lib ช่วยในการเขียน reactive programing ใช้ observables (เฝ้าดู)
+	เพื่อให้ง่ายต่อการเขียน asynchronouse หรือ callback
+
+	สร้างขึ้นเพื่อแก้ปัญหาของการจัดการ data streams แบบ asynchronouse
+	เพื่อให้ง่ายต่อการจัดการข้อมูล
+	เพิ่มประสิทธิภาพ และการ maintain
+
+	เฝ้าดูการเปลี่ยนแปลงของ data streams และเรียกใช้งาน function ตามที่ต้องการ (มี side effect)
+
+
+
+---
+
+promise ก็ใช้งานได้เหมือนกัน
+ทั้ง debouncing, cancellation, error, catch, etc
+สามารถเขียนได้ใน promise และ callback เหมือนกัน
+แต่ว่าโค้ดจะ ซับซ้อนมากขึ้น และบางครั้งเราก็ยังต้องการใช้ lib อื่นด้วย
+ก็ต้อง manual handle เอง
+
+ถ้าโค้ดไม่ได้ซับซ้อนมากใช้ promise ก็ได้
+
+observable = lazy
+promise = eager
+
+แต่ rxjs จะทำให้ code มัน clean readable, implement ง่าย
+เขียนโค้ดที่ซับซ้อนได้ง่ายขึ้น
+
+ถ้าเขียน promise ทั่วไป มักจะเขียนโค้ดที่รันครั้งเดียว จากนั้น handle success, fail
+
+observeables เป็น datastream ปล่อยข้อมูล ใช้ subscribe ส่องข้อมูล
+มีทั้ง unicast ขึ้นอยู่กับ subscription เหมาะใช้เช่นใช้กับตอนค่าเปลี่ยน หรือ fect
+multicast รันเอง มี subscription list เหมาะใช้ streamdata ต่อเนื่อง หรือ fetch ข้อมูลหลัก ๆ
+
+rxjs มี operator ให้ใช้เยอะ เพื่อเขียน async ที่ซับซ้อน ได้ง่ายขึ้น ใน pipe
+ในท่า declarative ง่ายขึ้น
